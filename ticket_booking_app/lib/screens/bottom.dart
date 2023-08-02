@@ -9,6 +9,19 @@ class Bottom extends StatefulWidget {
 }
 
 class _BottomState extends State<Bottom> {
+  int _selectedIndex = 0;
+  static final List<Widget> _widgetOption = <Widget>[
+    const Text("Home"),
+    const Text("Search"),
+    const Text("Tickets"),
+    const Text("Profile")
+  ];
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,8 +29,10 @@ class _BottomState extends State<Bottom> {
         centerTitle: true,
         title: const Text("My tickets"),
       ),
-      body: const Center(child: Text("Center")),
+      body: Center(child: _widgetOption[_selectedIndex]),
       bottomNavigationBar: BottomNavigationBar(
+          onTap: _onItemTapped,
+          currentIndex: _selectedIndex,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedItemColor: const Color.fromARGB(255, 97, 97, 97),
