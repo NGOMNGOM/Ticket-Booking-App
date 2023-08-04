@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:ticket_booking_app/utils/app_layout.dart';
 
 import '../utils/style.dart';
@@ -71,9 +72,31 @@ class TicketView extends StatelessWidget {
                         ),
                         ThickContainer(),
                         const Spacer(),
-                        Text("London",
+                        Text("LDN",
                             style: Style.headLineStlye3
                                 .copyWith(color: Colors.white))
+                      ],
+                    ),
+                    const Gap(3),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          child: Text("New-York",
+                              style: Style.headLineStlye4
+                                  .copyWith(color: Colors.white)),
+                        ),
+                        Text("8H 30M",
+                            style: Style.headLineStlye4
+                                .copyWith(color: Colors.white)),
+                        SizedBox(
+                          width: 100,
+                          child: Text("London",
+                              textAlign: TextAlign.end,
+                              style: Style.headLineStlye4
+                                  .copyWith(color: Colors.white)),
+                        ),
                       ],
                     )
                   ],
