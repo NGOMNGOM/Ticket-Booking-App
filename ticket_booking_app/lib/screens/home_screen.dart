@@ -2,7 +2,6 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking_app/screens/ticket_view.dart';
-import 'package:ticket_booking_app/widgets/thick_container.dart';
 
 import '../utils/style.dart';
 
@@ -82,7 +81,14 @@ class HomeScreen extends StatelessWidget {
                   ],
                 )),
             const Gap(15),
-            TicketView()
+            const SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.only(
+                  left: 20), // ในส่วนเฉพาะของ Scrollview (ซ้ายสุด)
+              child: Row(
+                children: [TicketView(), TicketView()],
+              ),
+            ),
           ],
         ));
   }
