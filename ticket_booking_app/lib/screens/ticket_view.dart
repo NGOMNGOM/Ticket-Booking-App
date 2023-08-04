@@ -18,6 +18,7 @@ class TicketView extends StatelessWidget {
         margin: const EdgeInsets.only(left: 16),
         child: Column(
           children: [
+            // Showing blue part of the ticket
             Container(
                 padding: const EdgeInsets.all(16),
                 decoration: const BoxDecoration(
@@ -100,7 +101,59 @@ class TicketView extends StatelessWidget {
                       ],
                     )
                   ],
-                ))
+                )),
+            // Showing the orange part of the ticket
+
+            Container(
+              color: const Color(0xFFF37B67),
+              child: Row(
+                children: [
+                  const SizedBox(
+                      height: 20,
+                      width: 10,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(10),
+                                bottomRight: Radius.circular(10))),
+                      )),
+                  Expanded(
+                      child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: LayoutBuilder(
+                      builder: ((context, constraints) {
+                        return Flex(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          direction: Axis.horizontal,
+                          children: List.generate(
+                              (constraints.constrainWidth() / 15).floor(),
+                              (index) => SizedBox(
+                                    width: 5,
+                                    height: 1,
+                                    child: DecoratedBox(
+                                      decoration:
+                                          BoxDecoration(color: Colors.white),
+                                    ),
+                                  )),
+                        );
+                      }),
+                    ),
+                  )),
+                  const SizedBox(
+                      height: 20,
+                      width: 10,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                bottomLeft: Radius.circular(10))),
+                      ))
+                ],
+              ),
+            )
           ],
         ),
       ),
