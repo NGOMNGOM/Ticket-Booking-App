@@ -89,7 +89,9 @@ class HomeScreen extends StatelessWidget {
                   left: 20), // ในส่วนเฉพาะของ Scrollview (ซ้ายสุด)
               child: Row(
                 children: ticketList
-                    .map((singleTicket) => TicketView(ticketInfo: singleTicket))
+                    .map((singleTicket) => TicketView(
+                          ticketInfo: singleTicket,
+                        ))
                     .toList(),
               ),
             ),

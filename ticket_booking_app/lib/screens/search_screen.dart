@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticket_booking_app/utils/app_layout.dart';
 import 'package:ticket_booking_app/widgets/icon_text.dart';
+import 'package:ticket_booking_app/widgets/ticket_tabs.dart';
 import 'package:ticket_booking_app/widgets/view_all.dart';
 
 import '../utils/style.dart';
@@ -24,47 +25,7 @@ class SearchScreen extends StatelessWidget {
                 style: Style.headLineStlye
                     .copyWith(fontSize: AppLayout.getWidth(35))),
             Gap(AppLayout.getHeight(20)),
-            Container(
-                padding: const EdgeInsets.all(3.5),
-                decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(AppLayout.getHeight(50)),
-                    color: const Color(0xFFF4F6FD)),
-                child: Row(
-                  children: [
-                    // Airline ticket
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                          vertical: AppLayout.getHeight(7)),
-                      width: size.width * 0.44,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.horizontal(
-                              left: Radius.circular(AppLayout.getHeight(50))),
-                          color: Colors.white),
-                      child: Text(
-                        "Airline tickets",
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    // Hotel
-                    FittedBox(
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                            vertical: AppLayout.getHeight(7)),
-                        width: size.width * 0.44,
-                        decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.horizontal(
-                              right: Radius.circular(AppLayout.getHeight(50))),
-                        ),
-                        child: Text(
-                          "Hotels",
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
+            TicketTab(firstTap: "Airline tickets", secondTab: "Hotels"),
             Gap(AppLayout.getHeight(25)),
             // Departure
             const IconText(

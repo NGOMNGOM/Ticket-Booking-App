@@ -2,6 +2,7 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_booking_app/screens/home_screen.dart';
 import 'package:ticket_booking_app/screens/search_screen.dart';
+import 'package:ticket_booking_app/screens/ticket_screen.dart';
 
 class Bottom extends StatefulWidget {
   const Bottom({super.key});
@@ -15,7 +16,7 @@ class _BottomState extends State<Bottom> {
   static final List<Widget> _widgetOption = <Widget>[
     const HomeScreen(),
     const SearchScreen(),
-    const Text("Tickets"),
+    const TicketScreen(),
     const Text("Profile")
   ];
   void _onItemTapped(int index) {
